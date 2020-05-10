@@ -23,7 +23,9 @@ public class PSManagement extends Application {
         
         Scene scene = new Scene(root);
         
+        
         stage.setScene(scene);
+        stage.setTitle("Purchase & Sales Pricing Management Tool v2020.1");
         stage.show();
     }
 

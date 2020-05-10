@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
@@ -20,7 +21,7 @@ import java.sql.PreparedStatement;
 public class DBConnection {
 
 
-    Connection con = null;
+    static Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
     boolean flag=false;
@@ -42,7 +43,7 @@ public class DBConnection {
     
     
     //method Connection starts
-    public Connection getConnection(){
+    public static Connection getConnection() throws SQLException{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             //con=DriverManager.getConnection("jdbc:mysql://localhost/IMS?user=root&password");
@@ -51,7 +52,7 @@ public class DBConnection {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return this.con;
+        return con;
     }//end of method Connection
     
     
