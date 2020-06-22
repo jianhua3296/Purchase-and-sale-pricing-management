@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 
 /**
@@ -57,38 +58,40 @@ public class home_Controller implements Initializable {
 
     @FXML
     void productClick(MouseEvent event) throws IOException{
-         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Product.fxml"));
-        BorderPane productPane = loader.load();
-        
-        mainBorder.setCenter(productPane);
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource("Product.fxml"));
+//        BorderPane productPane = loader.load();
+//        
+//        mainBorder.setCenter(productPane);
+
+        System.out.println("Product button click");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Product");
+        mainBorder.setCenter(view);
        
     }
 
     @FXML
     void purchaseClick(MouseEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Purchase.fxml"));
-        BorderPane purchasePane = loader.load();
-        
-        mainBorder.setCenter(purchasePane);
+         System.out.println("purchase button click");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Purchase");
+        mainBorder.setCenter(view);
     }
 
     @FXML
     void saleClick(MouseEvent event)throws IOException {
-       FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Sale.fxml"));
-        BorderPane salePane = loader.load();
-        
-        mainBorder.setCenter(salePane);
+         System.out.println("sale button click");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Sale");
+        mainBorder.setCenter(view);
     }
 
     @FXML
     void vendorClick(MouseEvent event) throws IOException{
-       FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Vendor.fxml"));
-        BorderPane vendorPane = loader.load();
-        
-        mainBorder.setCenter(vendorPane);
+         System.out.println("vendor button click");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Vendor");
+        mainBorder.setCenter(view);
     }
 }
